@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 @st.cache_resource
 def load_model():
     from sklearn.model_selection import train_test_split
-    df = pd.read_csv("c:/Users/sneha/OneDrive/Documents/kaggle-data/train.csv")
+    df = pd.read_csv("train.csv")
     df = df[["Survived", "Pclass", "Sex", "Age", "Fare", "Embarked"]].dropna()
     df["Sex"] = df["Sex"].map({"male": 0, "female": 1})
     df["Embarked"] = df["Embarked"].map({"C": 0, "Q": 1, "S": 2})
